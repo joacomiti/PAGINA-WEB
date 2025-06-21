@@ -32,8 +32,29 @@
         .navbar .dropdown:hover .dropdown-menu {
             display: block;
             margin-top: 0;
+            animation: fadeInDown 0.25s;
         }
         }
+            .dropdown-menu {
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            min-width: 200px;
+            padding: 0.5rem 0;
+            transition: box-shadow 0.2s;
+        }
+            .dropdown-item {
+            padding: 0.75rem 1.5rem;
+            transition: background 0.2s, color 0.2s;
+            font-weight: 500;
+        }
+            .dropdown-item:hover, .dropdown-item:focus {
+            background: #0d6efd;
+            color: #fff;
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-10px);}
+            to { opacity: 1; transform: translateY(0);}
+            }
     </style>
 
 </head>
