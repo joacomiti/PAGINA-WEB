@@ -11,7 +11,18 @@
             padding-top: 55px; 
             font-family: 'Poppins', Arial, sans-serif;
         }
-
+        .bg-mamba {
+            background-color: #693d1e !important;
+        }
+        .navbar .nav-link,
+        .navbar .navbar-brand {
+            color: #fff !important;
+        }
+        .navbar .nav-link.active,
+        .navbar .nav-link:hover,
+        .navbar .navbar-brand:hover {
+            color: #232323 !important;
+        }
         .categoria-img, .card-img-top {
             max-height: 500px;
             object-fit: cover;
@@ -72,12 +83,17 @@
             background: #a88b5a;
             color: #fff;
         }
+        .categorias-section,
+        .productos-section,
+        .presupuesto-section {
+            color: #f8f9fa;
+        }
     </style>
 
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <nav class="navbar navbar-expand-lg  bg-mamba fixed-top">
             <div class="container">
             <a class="navbar-brand" href="#">MAMBA</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"  aria-expanded="false" >
@@ -168,7 +184,7 @@
             </div>
         </div>
     </section>
-    <section class="py-5" style="background: #0a0a0a;">
+    <section class="py-5 pb-0" style="background: #0a0a0a;">
         <div class="container-fluid px-2">
             <h2 class="text-center mb-5 fw-bold" style="color: #f8f9fa; text-shadow: 0 2px 8px rgba(0,0,0,0.5);">Productos destacados</h2>
             <div class="row justify-content-center">
@@ -206,14 +222,15 @@
         </div>
     </section> 
 
-    <section class="py-5 bg-primary text-white text-center">
+    <section class="pb-5  text-white text-center" style="
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('img/presupuesto.jpeg') center center/cover no-repeat;padding-top: 3rem;">
         <div class="container">
             <h2 class="fw-bold mb-3">¿Listo para renovar tu hogar?</h2>
             <p class="lead mb-4">Contactanos hoy mismo y recibí asesoramiento personalizado para tus puertas y ventanas.</p>
-            <a href="#contacto" class="btn btn-light btn-lg">Pedí tu presupuesto</a>
+            <a href="#contacto" class="btn  btn-lg" style="background: transparent; color: #25D366; border: 2px solid #25D366;">Pedí tu presupuesto</a>
         </div>
     </section>  
-    <section class="py-5 bg-light">
+    <section class="py-5 ">
         <div class="container">
             <h2 class="text-center fw-bold mb-4">Sobre nosotros</h2>
             <div class="row justify-content-center">
