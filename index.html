@@ -23,6 +23,10 @@
             overflow: hidden;
             transition: box-shadow 0.2s;
             border-radius: 10px;
+            background: #232323; 
+            border: none;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+            color: #f8f9fa;
         }
         .card:hover .categoria-img,
         .card:hover .card-img-top {
@@ -57,7 +61,17 @@
         @keyframes fadeInDown {     /*BAJA FLUIDO */
             from { opacity: 0; transform: translateY(-10px);}
             to { opacity: 1; transform: translateY(0);}
-            }
+        }
+        .btn-mamba {
+            background: #bfa16a;
+            color: #fff;
+            border: none;
+            transition: background 0.2s;
+        }
+        .btn-mamba:hover, .btn-mamba:focus {
+            background: #a88b5a;
+            color: #fff;
+        }
     </style>
 
 </head>
@@ -98,7 +112,7 @@
         <div class="container">
             <div class="row align-items-center justify-content-end">
                 <div class="col-lg-7 col-md-7 text-center  mb-4 mb-lg-0">
-                    <h1 class="display-4 fw-bold text-center" style="color: #f8f9fa; text-shadow: 0 2px 8px rgba(0,0,0,0.5)";>Bienvenido a MAMBA </h1>
+                    <h1 class="display-4 fw-bold text-center" style="color: #f8f9fa; text-shadow: 0 2px 8px rgba(0,0,0,0.5);">Bienvenido a MAMBA </h1>
                     <p class="lead mb-4 text-center"style="color: #f8f9fa; text-shadow: 0 2px 8px rgba(0,0,0,0.4)";>Puertas y ventanas de calidad en madera y hierro. Modernas, rústicas y mucho más para tu hogar</p>
                     <a href="#" class="btn  btn-lg " style="background: #bfa16a; color: #222; border: none";>Ver productos</a>
                 </div>
@@ -111,16 +125,16 @@
             </div>
         </div>
     </section>
-    <section class="py-5 bg-white">
+    <section class="py-5" style="background: #0a0a0a;"> 
         <div class="container-fluid px-2">
-            <h2 class="text-center fw-bold mb-5">Nuestras categorías</h2>
+            <h2 class="text-center fw-bold mb-5 " style="color: #f8f9fa;text-shadow: 0 2px 8px rgba(0,0,0,0.5);">Nuestras categorías</h2>
             <div class="row g-2">
             <div class="col-12 col-md-6 mb-2">
                 <div class="card h-100 shadow">
                 <img src="img/portada.jpeg" class="card-img-top categoria-img" alt="PUERTA" >
                 <div class="card-body text-center">
-                    <h5 class="card-title">Puertas</h5>
-                    <a href="productos.html#puertas" class="btn btn-outline-primary">Ver más</a>
+                    <h5 class="card-title fs-3">Puertas</h5>
+                    <a href="productos.html#puertas" class="btn btn-mamba btn-sm">Ver más</a>
                 </div>
                 </div>
             </div>
@@ -128,8 +142,8 @@
                 <div class="card h-100 shadow">
                 <img src="img/ventana portada6.jpeg" class="card-img-top categoria-img" >
                 <div class="card-body text-center">
-                    <h5 class="card-title">Ventanas</h5>
-                    <a href="productos.html#ventanas" class="btn btn-outline-primary">Ver más</a>
+                    <h5 class="card-title fs-3">Ventanas</h5>
+                    <a href="productos.html#ventanas" class="btn btn-mamba btn-sm">Ver más</a>
                 </div>
                 </div>
             </div>
@@ -137,8 +151,8 @@
                 <div class="card h-100 shadow">
                 <img src="img/porton2.jpeg" class="card-img-top categoria-img" >
                 <div class="card-body text-center">
-                    <h5 class="card-title">Portones</h5>
-                    <a href="productos.html#portones" class="btn btn-outline-primary">Ver más</a>
+                    <h5 class="card-title fs-3">Portones</h5>
+                    <a href="productos.html#portones" class="btn btn-mamba btn-sm">Ver más</a>
                 </div>
                 </div>
             </div>
@@ -146,8 +160,8 @@
                 <div class="card h-100 shadow">
                 <img src="img/lampara4.jpeg" class="card-img-top categoria-img" >
                 <div class="card-body text-center">
-                    <h5 class="card-title">Faroles</h5>
-                    <a href="productos.html#faroles" class="btn btn-outline-primary">Ver más</a>
+                    <h5 class="card-title fs-3">Faroles</h5>
+                    <a href="productos.html#faroles" class="btn btn-mamba btn-sm">Ver más</a>
                 </div>
                 </div>
             </div>
