@@ -9,17 +9,24 @@
         body {
             padding-top: 55px; 
         }
-        .categoria-img {
-            max-height: 140px;
+        .categoria-img, .card-img-top {
+            max-height: 500px;
             object-fit: cover;
+            transition: transform 0.3s;
+            display: block;
+            width: 100%;
         }
         .card {
-        transition: box-shadow 0.2s, transform 0.2s;
-        border-radius: 10px;
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+            border-radius: 10px;
+        }
+        .card:hover .categoria-img,
+        .card:hover .card-img-top {
+            transform: scale(1.07);
         }
         .card:hover {
             box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-            transform: scale(1.03);
         }
     </style>
 
@@ -58,8 +65,8 @@
     <section class="py-5 bg-white">
         <div class="container-fluid px-2">
             <h2 class="text-center fw-bold mb-5">Nuestras categorías</h2>
-            <div class="row g-1">
-            <div class="col-12 col-md-6 mb-1">
+            <div class="row g-2">
+            <div class="col-12 col-md-6 mb-2">
                 <div class="card h-100 shadow">
                 <img src="img/portada.jpeg" class="card-img-top categoria-img" alt="PUERTA" >
                 <div class="card-body text-center">
@@ -68,29 +75,29 @@
                 </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 mb-1">
+            <div class="col-12 col-md-6 mb-2">
                 <div class="card h-100 shadow">
-                <img src="URL_IMAGEN_VENTANAS" class="card-img-top categoria-img" >
+                <img src="img/ventana portada6.jpeg" class="card-img-top categoria-img" >
                 <div class="card-body text-center">
                     <h5 class="card-title">Ventanas</h5>
                     <a href="#" class="btn btn-outline-primary">Ver más</a>
                 </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 mb-1">
+            <div class="col-12 col-md-6 mb-2">
                 <div class="card h-100 shadow">
-                <img src="URL_IMAGEN_VENTANAS" class="card-img-top categoria-img" >
+                <img src="img/porton2.jpeg" class="card-img-top categoria-img" >
                 <div class="card-body text-center">
                     <h5 class="card-title">Portones</h5>
                     <a href="#" class="btn btn-outline-primary">Ver más</a>
                 </div>
                 </div>
             </div>
-            <div class="col-12 col-md-6 mb-1">
+            <div class="col-12 col-md-6 mb-2">
                 <div class="card h-100 shadow">
-                <img src="URL_IMAGEN_VENTANAS" class="card-img-top categoria-img" >
+                <img src="img/lampara4.jpeg" class="card-img-top categoria-img" >
                 <div class="card-body text-center">
-                    <h5 class="card-title">Muebles</h5>
+                    <h5 class="card-title">Faroles</h5>
                     <a href="#" class="btn btn-outline-primary">Ver más</a>
                 </div>
                 </div>
