@@ -46,6 +46,10 @@
         .card:hover {
             box-shadow: 0 4px 16px rgba(0,0,0,0.15);
         }
+        .card-img-top {
+            height: 625px;
+            object-fit: cover;
+        }
         @media (min-width: 992px) {     /*HACE QUE EL MENU SE ABRA AL PASAR EL CURSOR, Y APLICA EL BAJAR FLUIDO (FADEINDOWN) */
         .navbar .dropdown:hover .dropdown-menu {
             display: block;
@@ -108,10 +112,11 @@
                     <a class="nav-link active"  href="#">Inicio</a>
                 </li>
                 <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="productos.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Productos
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="productos.html">Todos</a></li>
                     <li><a class="dropdown-item" href="productos.html#puertas">Puertas</a></li>
                     <li><a class="dropdown-item" href="productos.html#ventanas">Ventanas</a></li>
                     <li><a class="dropdown-item" href="productos.html#portones">Portones</a></li>
@@ -133,7 +138,7 @@
                 <div class="col-lg-7 col-md-7 text-center  mb-4 mb-lg-0">
                     <h1 class="display-4 fw-bold text-center" style="color: #f8f9fa; text-shadow: 0 2px 8px rgba(0,0,0,0.5);">Bienvenido a MAMBA </h1>
                     <p class="lead mb-4 text-center"style="color: #f8f9fa; text-shadow: 0 2px 8px rgba(0,0,0,0.4)";>Puertas y ventanas de calidad en madera y hierro. Modernas, rústicas y mucho más para tu hogar</p>
-                    <a href="#" class="btn  btn-lg " style="background: #bfa16a; color: #222; border: none";>Ver productos</a>
+                    <a href="productos.html" class="btn  btn-lg " style="background: #bfa16a; color: #222; border: none";>Ver productos</a>
                 </div>
                 <div class="col-lg-4 col-md-5 text-center">
                     <video src="video/video portada3.mp4"
@@ -190,13 +195,13 @@
     <section class="py-5 pb-0" style="background: #0a0a0a;">
         <div class="container-fluid px-2">
             <h2 class="text-center mb-5 fw-bold" style="color: #f8f9fa; text-shadow: 0 2px 8px rgba(0,0,0,0.5);">Productos destacados</h2>
-            <div class="row justify-content-center">
+            <div class="row justify-content-center align-items-stretch">
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
                 <img src="img/destacado2.jpg" class="card-img-top" alt="Puerta de madera moderna">
                 <div class="card-body text-center">
                     <h5 class="card-title fs-4">Puerta de Madera Moderna</h5>
-                    <p class="card-text">Diseño elegante y resistente, ideal para exteriores</p>
+                    <p class="card-text">Puerta de Nogal con un diseño elegante y resistente, ideal para exteriores</p>
                     <a href="#" class="btn btn-mamba btn-sm">Ver más</a>
                 </div>
                 </div>
@@ -267,8 +272,8 @@
                         <button type="submit" class="btn btn-primary">Enviar</button>
                     </form>
                     <div class="mt-4 text-center">
-                        <p><strong>Email:</strong> contacto@mitiaberturas.com</p>
-                        <p><strong>Teléfono:</strong> +54 11 1234-5678</p>
+                        <p><strong>Email:</strong> mamba@gmail.com</p>
+                        <p><strong>Teléfono:</strong> +54 11 3353-4945</p>
                     </div>
                 </div>
             </div>
