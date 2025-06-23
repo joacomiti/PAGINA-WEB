@@ -347,7 +347,7 @@
             <button class="btn btn-sm btn-danger" onclick="vaciarCarrito()">Vaciar carrito</button> <!-- boton de cerrar  vaciar carrito (funcion en el script)  -->
             <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>      <!-- boton de cerrar  abajo  -->
         </div>
-        <button id='btn-pagar' class="btn btn-mamba" >Ir a pagar</button>
+        <a href="checkout.html" class="btn btn-mamba">Ir a pagar</a>
     </div>
     </div>
     </div>
@@ -446,18 +446,7 @@
         const modal = new bootstrap.Modal(document.getElementById("cartModal"));
         modal.show();
         });
-
-        document.getElementById("btn-pagar").addEventListener("click", () => {
-            Swal.fire({
-                title: '¡Gracias por tu compra!',
-                text: 'Nos contactaremos con vos a la brevedad.',
-                icon: 'success',
-                confirmButtonText: 'Aceptar',
-                confirmButtonColor: '#bfa16a'
-            });
-            vaciarCarrito();
-            });
-
+        
         // Cargar al iniciar
         renderCarrito();
 
