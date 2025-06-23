@@ -6,97 +6,7 @@
     <title>MAMBA</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            padding-top: 55px; 
-            font-family: 'Poppins', Arial, sans-serif;
-        }
-        .bg-mamba {
-            background-color: #693d1e !important;
-        }
-        .navbar .nav-link,
-        .navbar .navbar-brand {
-            color: #fff !important;
-        }
-        .navbar .nav-link.active,
-        .navbar .nav-link:hover,
-        .navbar .navbar-brand:hover {
-            color: #232323 !important;
-        }
-        .categoria-img, .card-img-top {
-            max-height: 500px;
-            object-fit: cover;
-            transition: transform 0.3s;
-            display: block;
-            width: 100%;
-        }
-        .card {
-            overflow: hidden;
-            transition: box-shadow 0.2s;
-            border-radius: 10px;
-            background: #232323; 
-            border: none;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.18);
-            color: #f8f9fa;
-        }
-        .card:hover .categoria-img,
-        .card:hover .card-img-top {
-            transform: scale(1.07);
-        }
-        .card:hover {
-            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-        }
-        .card-img-top {
-            height: 625px;
-            object-fit: cover;
-        }
-        @media (min-width: 992px) {     /*HACE QUE EL MENU SE ABRA AL PASAR EL CURSOR, Y APLICA EL BAJAR FLUIDO (FADEINDOWN) */
-        .navbar .dropdown:hover .dropdown-menu {
-            display: block;
-            margin-top: 0;
-            animation: fadeInDown 0.25s;
-        }
-        }
-            .dropdown-menu {             /*BORDES REDON, SOMBRAS, PADDING ANCHO MIN */
-            background-color: #232323;
-            color: #f8f9fa;
-            border-radius: 10px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
-            min-width: 200px;
-            padding: 0.5rem 0;
-            transition: box-shadow 0.2s;
-        }
-            .dropdown-item {     /*ESPACIADO, ESTILO LETRA Y FLUIDO EL CAMBIO DE COLOR */
-            color: #f8f9fa;
-            padding: 0.75rem 1.5rem;
-            transition: background 0.2s, color 0.2s;
-            font-weight: 500;
-        }
-            .dropdown-item:hover, .dropdown-item:focus {    /*CUANDO PASO FONDO AZUL TEXTO BLANCO */
-            background: #693d1e;
-            color: #f8f9fa;
-        }
-        @keyframes fadeInDown {     /*BAJA FLUIDO */
-            from { opacity: 0; transform: translateY(-10px);}
-            to { opacity: 1; transform: translateY(0);}
-        }
-        .btn-mamba {
-            background: #bfa16a;
-            color: #f8f9fa;
-            border: none;
-            transition: background 0.2s;
-        }
-        .btn-mamba:hover, .btn-mamba:focus {
-            background: #a88b5a;
-            color: #f8f9fa;
-        }
-        .categorias-section,
-        .productos-section,
-        .presupuesto-section {
-            color: #f8f9fa;
-        }
-    </style>
-
+    <link rel="stylesheet" href="estilosindex.css">
 </head>
 <body>
     <header>
@@ -294,8 +204,8 @@
             </div>
         </div>
     </footer>
-
-
+    
+<!--MODAL DEL CARRITO DE COMPRAS-->
     <div class="modal fade" id="cartModal" aria-labelledby="cartModalLabel" tabindex="-1" aria-hidden="true">  
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content bg-dark text-light">    <!-- ojo al cambio de color  -->
@@ -318,112 +228,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
-        const contadorCarrito = document.getElementById("cart-count");    //numero de productos en el carrito (el de al lado del icono)
-        const listaCarrito = document.getElementById("cart-items");       //lista ul de productos 
-        const totalCarrito = document.getElementById("cart-total");       //suma total de precio de los productos
+    <script src="script.js"></script>
 
-
-        function actualizarContador() {      //actualiza el contador de productos en el carrito
-        const total = carrito.reduce((acc, item) => acc + item.cantidad, 0);
-        contadorCarrito.textContent = total;
-        }
-
-        function renderCarrito() {      //muestra los productos, total, botones de los productos de carrito
-            listaCarrito.innerHTML = "";
-            let total = 0;
-
-
-            carrito.forEach((item, index) => {
-                total += item.cantidad * item.precio;
-
-
-                const li = document.createElement("li");
-                li.classList.add("list-group-item", "d-flex", "justify-content-between", "align-items-center");   //puedo usar setAttribute pero es mejor practica classList.add
-                li.innerHTML = `
-                <div>
-                    <img src="${item.img}" alt="${item.nombre}" style="width: 50px; height: 50px; object-fit: cover; margin-right: 10px; border-radius: 4px;">
-                    <strong>${item.nombre}</strong> x ${item.cantidad}
-                    <br><small>$${item.precio} c/u</small>
-                </div>
-                <div>
-                    <button class="btn btn-sm btn-outline-secondary me-1" onclick="cambiarCantidad(${index}, -1)">-</button>
-                    <button class="btn btn-sm btn-outline-secondary me-1" onclick="cambiarCantidad(${index}, 1)">+</button>
-                    <button class="btn btn-sm btn-outline-danger" onclick="eliminarDelCarrito(${index})">🗑️</button>
-                </div>
-                `;
-                listaCarrito.appendChild(li);
-            });
-
-            totalCarrito.textContent = total;
-            localStorage.setItem("carrito", JSON.stringify(carrito));
-            actualizarContador();
-            const btnIrAPagar = document.getElementById("btn-ir-a-pagar");
-            if (carrito.length === 0) {
-                btnIrAPagar.classList.add("disabled");
-                btnIrAPagar.setAttribute("aria-disabled", "true");
-                btnIrAPagar.removeAttribute("href");
-            } else {
-                btnIrAPagar.classList.remove("disabled");
-                btnIrAPagar.setAttribute("aria-disabled", "false");
-                btnIrAPagar.setAttribute("href", "checkout.html");
-    }
-        }
-
-        function cambiarCantidad(index, cambio) {     //botones de + y - de cada producto, y si llega a 0 ejecutar eliminar 
-            carrito[index].cantidad += cambio;
-            if (carrito[index].cantidad <= 0) {
-                eliminarDelCarrito(index);
-            } else {
-                renderCarrito();
-            }
-        }
-
-        function eliminarDelCarrito(index) {     //boton de eliminar solo el producto del carrito
-        carrito.splice(index, 1);
-        renderCarrito();
-        }
-
-        function vaciarCarrito() {   //boton para eliminar todo el carrito
-            if (carrito.length === 0) {
-                alert("El carrito ya está vacío.");
-                return;
-            }
-        carrito = [];
-        renderCarrito();
-        }
-
-        function agregarAlCarrito(nombre,precio,img) {    //agrego producto al carrito, si ya existe aumenta 1 la cantidad
-        const existente = carrito.find(item => item.nombre === nombre);
-        if (existente) {
-            existente.cantidad++;
-        } else {
-            carrito.push({ nombre, precio, cantidad: 1,img });
-        }
-        renderCarrito();
-        }
-
-
-        //botones-eventos 
-        const botonesAgregar=document.querySelectorAll(".add-to-cart");
-
-        botonesAgregar.forEach(boton => {   //recorro todos los botones de agregar al carrito, extraigo los datos y con la funcion los agrego al carrito
-        boton.addEventListener("click", () => {
-            const nombre = boton.dataset.product;
-            const precio = parseFloat(boton.dataset.precio);
-            const img = boton.dataset.img; // Si necesitas la imagen, puedes usarla aquí
-            agregarAlCarrito(nombre,precio,img);
-        });
-        });
-
-        document.getElementById("cart-btn").addEventListener("click", () => {
-        const modal = new bootstrap.Modal(document.getElementById("cartModal"));
-        modal.show();
-        });
-
-        // Cargar al iniciar
-        renderCarrito();
-        </script>
 </body>
 </html>

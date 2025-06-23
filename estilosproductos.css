@@ -1,0 +1,124 @@
+/* 1. Estilos globales */
+        body {
+            padding-top: 55px; 
+            font-family: 'Poppins', Arial, sans-serif;
+            background: #0a0a0a;
+            color: #f8f9fa;
+        }
+
+        /* 2. Utilidades y colores */
+        .bg-mamba {
+            background-color: #693d1e !important;
+        }
+
+        /* 3. Navbar */
+        .navbar .nav-link,
+        .navbar .navbar-brand {
+            color: #fff !important;
+        }
+        .navbar .nav-link.active,
+        .navbar .nav-link:hover,
+        .navbar .navbar-brand:hover {
+            color: #232323 !important;
+        }
+
+        /* 4. Dropdown */
+        .dropdown-menu {
+            background-color: #232323;
+            color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            min-width: 200px;
+            padding: 0.5rem 0;
+            transition: box-shadow 0.2s;
+        }
+        .dropdown-item {
+            color: #f8f9fa;
+            padding: 0.75rem 1.5rem;
+            transition: background 0.2s, color 0.2s;
+            font-weight: 500;
+        }
+        .dropdown-item:hover, .dropdown-item:focus {
+            background: #693d1e;
+            color: #f8f9fa;
+        }
+
+        /* 5. Cards */
+        .categoria-img, .card-img-top {
+            max-height: 500px;
+            object-fit: cover;
+            transition: transform 0.3s;
+            display: block;
+            width: 100%;
+        }
+        .card {
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+            border-radius: 10px;
+            background: #232323; 
+            border: none;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+            color: #f8f9fa;
+        }
+        .card:hover .categoria-img,
+        .card:hover .card-img-top {
+            transform: scale(1.07);
+        }
+        .card:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        .card-img-top {
+            height: 350px;
+            object-fit: cover;
+        }
+
+        /* 6. Botones personalizados */
+        .btn-mamba {
+            background: #bfa16a;
+            color: #f8f9fa;
+            border: none;
+            transition: background 0.2s;
+        }
+        .btn-mamba:hover, .btn-mamba:focus {
+            background: #a88b5a;
+            color: #f8f9fa;
+        }
+
+        /* 7. Secciones */
+        .categorias-section,
+        .productos-section,
+        .presupuesto-section {
+            color: #f8f9fa;
+        }
+
+        /* 8. Media queries y animaciones */
+        @media (min-width: 992px) {
+            .navbar .dropdown:hover .dropdown-menu {
+                display: block;
+                margin-top: 0;
+                animation: fadeInDown 0.25s;
+            }
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-10px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+
+        /* 9. Otros estilos */
+        .categoria-titulo {
+            margin-top: 2rem;
+            margin-bottom: 1.5rem;
+            border-bottom: 2px solid #bfa16a;
+            display: inline-block;
+            padding-bottom: 0.3rem;
+            color: #f8f9fa;
+            scroll-margin-top: 80px;
+        }
+        @media (max-width: 767px) {
+            .productos-section .card-img-top {
+                height: 180px; 
+            }
+            .productos-section .card {
+                margin-bottom: 1rem;
+            }
+        }
