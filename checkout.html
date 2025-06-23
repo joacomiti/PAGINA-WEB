@@ -44,6 +44,20 @@
     <script>
     // Inicializar EmailJS
     emailjs.init('xR8hRdsqGKRiiHKRV');
+    let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+    function armarTextoProductos() {
+        let texto = '';
+        carrito.forEach(p => {
+        texto += `• ${p.nombre} - Cantidad: ${p.cantidad}\n`;
+        });
+    return texto;
+    }
+
+    function calcularTotal() {
+         return carrito.reduce((acc, p) => acc + p.precio * p.cantidad, 0);
+    }
+    
 
     document.getElementById('checkout-form').addEventListener('submit', function (e) {
         e.preventDefault();
@@ -51,22 +65,29 @@
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const address = document.getElementById('address').value;
-
+        const productosTexto = armarTextoProductos();
+        const total = calcularTotal();
+        
         const templateParams = {
         from_name: name,
         from_email: email,
         to_email: email,
         address: address,
+        productos: productosTexto,
+        total: total,
         };
 
         emailjs.send('service_pczs4it', 'template_d779pad', templateParams)
+
         .then(() => {
             Swal.fire({
             icon: 'success',
             title: 'Pedido enviado',
             text: 'Gracias por tu compra. Te contactaremos pronto.',
             });
-            this.reset();
+            localStorage.removeItem("carrito");
+            carrito = [];
+            document.getElementById('checkout-form').reset();
         })
         .catch((error) => {
             Swal.fire({
