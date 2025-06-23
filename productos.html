@@ -351,6 +351,17 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
     <script>
+        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        const contadorCarrito = document.getElementById("cart-count");    //numero de productos en el carrito (el de al lado del icono)
+        const listaCarrito = document.getElementById("cart-items");       //lista ul de productos 
+        const totalCarrito = document.getElementById("cart-total");       //suma total de precio de los productos
+
+
+        function actualizarContador() {      //actualiza el contador de productos en el carrito
+        const total = carrito.reduce((acc, item) => acc + item.cantidad, 0);
+        contadorCarrito.textContent = total;
+        }
+
 </script>
 </body>
 </html>
