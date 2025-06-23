@@ -346,6 +346,7 @@
         <div class="modal-footer border-0">
             <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>      <!-- boton de cerrar  abajo  -->
         </div>
+        <button class="btn btn-danger" onclick="vaciarCarrito()">Vaciar carrito</button> <!-- boton de cerrar  vaciar carrito (funcion en el script)  -->
         </div>
     </div>
     </div>
@@ -425,7 +426,18 @@
         renderCarrito();
         }
 
+        //botones-eventos 
+        const botonesAgregar=document.querySelectorAll(".add-to-cart");
         
+        botonesAgregar.forEach(boton => {
+        boton.addEventListener("click", () => {
+            const nombre = boton.dataset.product;
+            const precio = parseFloat(boton.dataset.precio);
+            agregarAlCarrito(nombre,precio);
+        });
+        });
+
+
 
 
 </script>
