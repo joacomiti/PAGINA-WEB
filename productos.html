@@ -428,6 +428,15 @@
         renderCarrito();
         }
 
+        function irAPagar() {   //boton de ir a pagar, por ahora solo muestra un alert
+            if (carrito.length === 0) {
+                alert("El carrito está vacío. Agrega productos antes de pagar.");
+                return;
+            }
+            alert("Gracias por tu compra. ¡Pronto recibirás un correo con los detalles!");
+            vaciarCarrito();
+        }
+
         //botones-eventos 
         const botonesAgregar=document.querySelectorAll(".add-to-cart");
 
