@@ -112,13 +112,6 @@
             from { opacity: 0; transform: translateY(-10px);}
             to { opacity: 1; transform: translateY(0);}
         }
-        #cart-btn {
-            text-decoration: none;
-        }
-
-        #cart-btn:hover, #cart-btn:focus {
-            text-decoration: none;
-        }
 
         /* 9. Otros estilos */
         .categoria-titulo {
@@ -168,12 +161,13 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contacto</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" id="cart-btn">
+                        🛒 <span id="cart-count" class="badge bg-mamba">0</span>
+                    </a>
+                </li>
                 </ul>
             </div>
-            <a href="#" id="cart-btn" class="btn btn-link text-light position-relative ms-3">
-                🛒
-                <span id="cart-count" class="badge bg-mamba position-absolute top-50 start-100 translate-middle rounded-pill">0</span>
-            </a>
             </div>
         </nav>
     </header>
