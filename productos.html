@@ -428,14 +428,22 @@
 
         //botones-eventos 
         const botonesAgregar=document.querySelectorAll(".add-to-cart");
-        
-        botonesAgregar.forEach(boton => {
+
+        botonesAgregar.forEach(boton => {   //recorro todos los botones de agregar al carrito, extraigo los datos y con la funcion los agrego al carrito
         boton.addEventListener("click", () => {
             const nombre = boton.dataset.product;
             const precio = parseFloat(boton.dataset.precio);
             agregarAlCarrito(nombre,precio);
         });
         });
+
+        document.getElementById("cart-btn").addEventListener("click", () => {
+        const modal = new bootstrap.Modal(document.getElementById("cartModal"));
+        modal.show();
+        });
+
+        // Cargar al iniciar
+        renderCarrito();
 
 
 
