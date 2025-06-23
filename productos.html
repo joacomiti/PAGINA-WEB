@@ -362,6 +362,37 @@
         contadorCarrito.textContent = total;
         }
 
+        function renderCarrito() {      //muestra los productos, total, botones de los productos de carrito
+        listaCarrito.innerHTML = "";
+        let total = 0;
+
+
+        carrito.forEach((item, index) => {
+            total += item.cantidad * item.precio;
+
+
+            const li = document.createElement("li");
+            li.classList.add("list-group-item", "d-flex", "justify-content-between", "align-items-center");
+            li.innerHTML = `
+            <div>
+                <strong>${item.nombre}</strong> x ${item.cantidad}
+                <br><small>$${item.precio} c/u</small>
+            </div>
+            <div>
+                <button class="btn btn-sm btn-outline-secondary me-1" onclick="cambiarCantidad(${index}, -1)">-</button>
+                <button class="btn btn-sm btn-outline-secondary me-1" onclick="cambiarCantidad(${index}, 1)">+</button>
+                <button class="btn btn-sm btn-outline-danger" onclick="eliminarDelCarrito(${index})">🗑️</button>
+            </div>
+            `;
+            listaCarrito.appendChild(li);
+        });
+
+
+        totalCarrito.textContent = total;
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        actualizarContador();
+        }
+
 </script>
 </body>
 </html>
