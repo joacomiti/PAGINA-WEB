@@ -347,11 +347,12 @@
             <button class="btn btn-sm btn-danger" onclick="vaciarCarrito()">Vaciar carrito</button> <!-- boton de cerrar  vaciar carrito (funcion en el script)  -->
             <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>      <!-- boton de cerrar  abajo  -->
         </div>
-        <button class="btn btn-mamba" onclick="irAPagar()">Ir a pagar</button>
+        <button id='btn-pagar' class="btn btn-mamba" >Ir a pagar</button>
     </div>
     </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
         const contadorCarrito = document.getElementById("cart-count");    //numero de productos en el carrito (el de al lado del icono)
@@ -428,14 +429,6 @@
         renderCarrito();
         }
 
-        function irAPagar() {   //boton de ir a pagar, por ahora solo muestra un alert
-            if (carrito.length === 0) {
-                alert("El carrito está vacío. Agrega productos antes de pagar.");
-                return;
-            }
-            alert("Gracias por tu compra. ¡Pronto recibirás un correo con los detalles!");
-            vaciarCarrito();
-        }
 
         //botones-eventos 
         const botonesAgregar=document.querySelectorAll(".add-to-cart");
@@ -453,6 +446,17 @@
         const modal = new bootstrap.Modal(document.getElementById("cartModal"));
         modal.show();
         });
+
+        document.getElementById("btn-pagar").addEventListener("click", () => {
+            Swal.fire({
+                title: '¡Gracias por tu compra!',
+                text: 'Nos contactaremos con vos a la brevedad.',
+                icon: 'success',
+                confirmButtonText: 'Aceptar',
+                confirmButtonColor: '#bfa16a'
+            });
+            vaciarCarrito();
+            });
 
         // Cargar al iniciar
         renderCarrito();
