@@ -295,7 +295,7 @@
         </div>
     </footer>
 
-    
+
     <div class="modal fade" id="cartModal" aria-labelledby="cartModalLabel" tabindex="-1" aria-hidden="true">  
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content bg-dark text-light">    <!-- ojo al cambio de color  -->
@@ -311,7 +311,7 @@
             <button class="btn btn-sm btn-danger" onclick="vaciarCarrito()">Vaciar carrito</button> <!-- boton de cerrar  vaciar carrito (funcion en el script)  -->
             <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>      <!-- boton de cerrar  abajo  -->
         </div>
-        <a href="checkout.html" class="btn btn-mamba" target="_blank">Ir a pagar</a>
+        <a href="checkout.html"  class="btn btn-mamba" id="btn-ir-a-pagar" aria-disabled="true" target="_blank">Ir a pagar</a>
     </div>
     </div>
     </div>
@@ -359,6 +359,16 @@
             totalCarrito.textContent = total;
             localStorage.setItem("carrito", JSON.stringify(carrito));
             actualizarContador();
+            const btnIrAPagar = document.getElementById("btn-ir-a-pagar");
+            if (carrito.length === 0) {
+                btnIrAPagar.classList.add("disabled");
+                btnIrAPagar.setAttribute("aria-disabled", "true");
+                btnIrAPagar.removeAttribute("href");
+            } else {
+                btnIrAPagar.classList.remove("disabled");
+                btnIrAPagar.setAttribute("aria-disabled", "false");
+                btnIrAPagar.setAttribute("href", "checkout.html");
+    }
         }
 
         function cambiarCantidad(index, cambio) {     //botones de + y - de cada producto, y si llega a 0 ejecutar eliminar 
