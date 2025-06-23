@@ -401,6 +401,22 @@
             }
         }
 
+        function eliminarDelCarrito(index) {     //boton de eliminar solo el producto del carrito
+        carrito.splice(index, 1);
+        renderCarrito();
+        }
+
+        function vaciarCarrito() {   //boton para eliminar todo el carrito
+            if (carrito.length === 0) {
+                alert("El carrito ya está vacío.");
+                return;
+            }
+        carrito = [];
+        renderCarrito();
+        }
+
+
+
 
 </script>
 </body>
