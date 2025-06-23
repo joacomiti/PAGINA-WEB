@@ -95,6 +95,13 @@
         .presupuesto-section {
             color: #f8f9fa;
         }
+        #cart-btn {
+            text-decoration: none;
+        }
+
+        #cart-btn:hover, #cart-btn:focus {
+            text-decoration: none;
+        }
     </style>
 
 </head>
@@ -126,13 +133,12 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contacto</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#" id="cart-btn">
-                        🛒 <span id="cart-count" class="badge bg-mamba">0</span>
-                    </a>
-                </li>
                 </ul>
             </div>
+            <a href="#" id="cart-btn" class="btn btn-link text-light position-relative ms-3">
+                🛒
+                <span id="cart-count" class="badge bg-mamba position-absolute top-50 start-100 translate-middle rounded-pill">0</span>
+            </a>
             </div>
         </nav>
     </header>
