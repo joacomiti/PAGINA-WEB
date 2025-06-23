@@ -347,7 +347,7 @@
             <button class="btn btn-sm btn-danger" onclick="vaciarCarrito()">Vaciar carrito</button> <!-- boton de cerrar  vaciar carrito (funcion en el script)  -->
             <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>      <!-- boton de cerrar  abajo  -->
         </div>
-        <a href="checkout.html" class="btn btn-mamba">Ir a pagar</a>
+        <a href="checkout.html" class="btn btn-mamba" target="_blank">Ir a pagar</a>
     </div>
     </div>
     </div>
@@ -446,7 +446,7 @@
         const modal = new bootstrap.Modal(document.getElementById("cartModal"));
         modal.show();
         });
-        
+
         // Cargar al iniciar
         renderCarrito();
 
