@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="estilosindex.css">
 </head>
-<body>
     <header>
         <nav class="navbar navbar-expand-lg  bg-mamba fixed-top">
             <div class="container">
@@ -46,8 +45,9 @@
             </div>
         </nav>
     </header>
+    <main>
     <section class="py-5" style="
-    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('img/bienvenido2.jpg') center center/cover no-repeat">>
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('img/bienvenido2.jpg') center center/cover no-repeat">
         <div class="container">
             <div class="row align-items-center justify-content-end">
                 <div class="col-lg-7 col-md-7 text-center  mb-4 mb-lg-0">
@@ -114,33 +114,39 @@
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
                 <img src="img/destacado2.jpg" class="card-img-top" alt="Puerta de madera moderna">
-                <div class="card-body text-center">
+                <div class="card-body  d-flex flex-column text-center">
                     <h5 class="card-title fs-4">Puerta de Madera Moderna</h5>
                     <p class="card-text">Puerta de Nogal con un diseño elegante y resistente, ideal para exteriores</p>
+                    <div class="mt-auto">
                     <p class="card-precio">$999.000</p>
                     <button class="btn btn-mamba btn-sm add-to-cart" data-product="Puerta de madera moderna" data-precio="999000" data-img="img/destacado2.jpg">Agregar al carrito</button>
+                    </div>
                 </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
                 <img src="img/destacado3.jpeg" class="card-img-top" alt="Ventana de hierro">
-                <div class="card-body text-center">
+                <div class="card-body  d-flex flex-column text-center">
                     <h5 class="card-title fs-4">Ventana de Hierro</h5>
                     <p class="card-text">Seguridad y estilo para tu hogar, con terminaciones de calidad</p>
+                    <div class="mt-auto">
                     <p class="card-precio">$299.000</p>
                     <button class="btn btn-mamba btn-sm add-to-cart" data-product="Ventana clásica de hierro" data-precio="299000" data-img="img/destacado3.jpeg">Agregar al carrito</button>
+                </div>
                 </div>
                 </div>
             </div>
             <div class="col-md-4 mb-4">
                 <div class="card h-100">
                 <img src="img/destacado4.jpg" class="card-img-top" alt="Farol de Hierro">
-                <div class="card-body text-center">
+                <div class="card-body  d-flex flex-column text-center">
                     <h5 class="card-title fs-4">Farol de hierro</h5>
                     <p class="card-text">Farol artesanal en hierro, ideal para exterior o interior. Iluminá tus espacios con estilo y calidad</p>
+                    <div class="mt-auto">
                     <p class="card-precio">$150.000</p>
                     <button class="btn btn-mamba btn-sm add-to-cart" data-product="Farol de hierro" data-precio="150000" data-img="img/destacado4.jpg">Agregar al carrito</button>
+                    </div>
                 </div>
                 </div>
             </div>
@@ -197,6 +203,7 @@
             </div>
         </div>
     </section>
+</main>
     <footer class="bg-dark text-white py-3">
         <div class="container text-center">
             <small>&copy; 2024 MAMBA. Todos los derechos reservados.</small>
@@ -228,6 +235,7 @@
             <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>      <!-- boton de cerrar  abajo  -->
         </div>
         <a href="checkout.html"  class="btn btn-mamba" id="btn-ir-a-pagar" aria-disabled="true" target="_blank">Ir a pagar</a>
+        </div>
     </div>
     </div>
     </div>
