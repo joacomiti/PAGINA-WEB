@@ -81,11 +81,6 @@ body {
             background: #a88b5a;
             color: #f8f9fa;
         }
-        .categorias-section,
-        .productos-section,
-        .presupuesto-section {
-            color: #f8f9fa;
-        }
         #contacto {
             scroll-margin-top: 80px; /* Ajustá este valor según tu header fijo o lo que quieras */
         }
